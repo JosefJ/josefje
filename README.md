@@ -1,4 +1,4 @@
-# Polynom Website
+# JJ's Website
 
 ## Project setup
 ```

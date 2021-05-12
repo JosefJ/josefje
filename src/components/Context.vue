@@ -2,12 +2,12 @@
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
-    <div class="row top">
-      <div class="one-half">
+    <div class="row">
+      <div class="one-half culumn" style="margin-top: 25%">
         <div class="nav">
           <a href="/#/">
-            <img id="logo" src="../assets/back.png">
-            <span id="backNav">BACK</span>
+            <img id="logo" src="../assets/backs.png">
+            <span id="backNav"> BACK </span>
           </a>
         </div>
 <!--        <h1> ../</h1>-->
@@ -16,7 +16,7 @@
           {{ context.description }}
         </p>
       </div>
-      <div class="one-half" style="margin-top: 5%" v-for="item in context.items" v-bind:key="item">
+      <div class="one-half" style="margin-top: 5%" v-bind:key="item" v-for="item in context.items">
         <h4 v-if="item.link"> <a :href="item.link" target="_blank"> {{ item.name }} </a> </h4>
         <h4 v-else> {{ item.name }} </h4>
         <p> {{ item.description }}</p>
@@ -43,19 +43,19 @@ export default {
 
 <style scoped>
 #logo {
-  height: 14px;
-  padding: 20px 0px;
+  height: 54px;
   margin: 12px 0px;
-  margin-right: 10px;
-  /*display: inline;*/
+  opacity: 0.1;
+  -webkit-animation: pulse 3s infinite ease-in-out;
+  -o-animation: pulse 3s infinite ease-in-out;
+  -ms-animation: pulse 3s infinite ease-in-out;
+  -moz-animation: pulse 3s infinite ease-in-out;
+  animation: pulse 3s infinite ease-in-out;
 }
 
 #backNav{
-  /*border-bottom: 1px dotted;*/
   position: absolute;
-  padding: 26px 0px;
-  /*top:  3.5%;*/
-  /*display: inline;*/
+  top: 4%;
   -webkit-animation: pulse 3s infinite ease-in-out;
   -o-animation: pulse 3s infinite ease-in-out;
   -ms-animation: pulse 3s infinite ease-in-out;
@@ -69,7 +69,7 @@ export default {
 
 h1 {
   font-size: 72px;
-  font-family: Rift;
+  font-family: Roboto;
   letter-spacing: 16px;
   font-weight: 600;
 }
@@ -81,20 +81,16 @@ h2 {
 h4 > a {
   color: #000;
   text-decoration: none;
-  /*border-bottom: 2px dotted;*/
-}
-
-h4 > a:hover {
-  color: #1EAEDB;
+  border-bottom: 2px dotted;
 }
 
 h4 > a::after {
-  background-image: url('../assets/back.png');
-  background-size: 5px 10px;
+  background-image: url('../assets/backs.png');
+  background-size: 10px 10px;
   content: "";
   display: inline-block;
   height: 10px;
-  width: 5px;
+  width: 10px;
   position: absolute;
   -webkit-transform: rotate(135deg);
   -moz-transform: rotate(135deg);
@@ -114,10 +110,6 @@ h4 > a::after {
   0% { opacity: 0.4; }
   50% { opacity: 1; }
   100% { opacity: 0.4; }
-}
-
-.top {
-  margin-top: 25%;
 }
 
 </style>

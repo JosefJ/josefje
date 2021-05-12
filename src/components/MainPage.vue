@@ -2,38 +2,21 @@
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
-    <div class="row top">
-      <div class="one-half">
+    <div class="row">
+      <div class="one-half culumn" style="margin-top: 25%">
+        <h1> Josef Je </h1>
+        <h2> Simple website of a simple man </h2>
+        <h4> Wasting my time on many things: </h4>
+        <ul>
+          <li> <router-link to="/build">building</router-link> funny stuff </li>
+          <li> <router-link to="/organize">organizing</router-link> meetups & events </li>
+          <li> <router-link to="/support">supporting</router-link> projects & communities </li>
 
-        <div>
-          <img id="logo-w" class="hidden" src="../assets/polynom_logo.png">
-          <img id="logo" src="../assets/polynom_logo.png">
-          <h2 id="cao" class="hidden"> Chao Ab Ordo </h2>
-          <h2 id="cfo"> Chaos comes from Order </h2>
-
-        </div>
-
-        <div id="nav">
-          <h3> We are</h3>
-          <!-- <h3> <router-link to="/team"> We</router-link> are</h3>-->
-          <ul>
-            <li> <router-link to="/build">building</router-link> decentralized applications </li>
-            <li> <router-link to="/research">researching</router-link> technology </li>
-            <li> <router-link to="/organize">organizing</router-link> events </li>
-            <li> <router-link to="/support">supporting</router-link> communities </li>
-          </ul>
-          <p id="overtrans"> Our interests lie in privacy, security and, wherever applicable,</p>
-        </div>
-        <span id="transparency" @click="transTog">transparency</span>
-        <div id="contact" style="margin-top: 10%">
-          <h4> You name it:  </h4>
-          <p> <a href="mailto:root@polynom.com"> root@polynom.com</a> <a href="./polynom-pgp" target="_blank" download> (PGP) </a> </p>
-        </div>
-
-        <div>
-          <p id="mandatory"> POLYNOM OÜ (14418967), Sepapaja 6, 15551, Tallinn, Estonia </p>
-        </div>
-
+        </ul>
+      </div>
+      <div class="" style="margin-top: 10%">
+        <h4> Get in touch </h4>
+        <p> <a href="mailto:me@josef.je?subject=Hey there!"> me@josef.je</a> </p>
       </div>
     </div>
   </div>
@@ -47,42 +30,21 @@ export default {
     }
   },
   methods: {
+    transIn: () => {
+      document.getElementById('bg').classList.add('trans')
+      document.getElementById('transparency').classList.add('transText')
+    },
     transOut: () => {
       document.getElementById('bg').classList.remove('trans')
       document.getElementById('transparency').classList.remove('transText')
-      document.getElementById('logo').classList.remove('hidden')
-      document.getElementById('logo-w').classList.add('hidden')
-
-      document.getElementById('cfo').classList.remove('hidden')
-      document.getElementById('cao').classList.add('hidden')
-
-      document.getElementById('nav').classList.remove('hidden')
-      document.getElementById('contact').classList.remove('hidden')
     },
     transTog: () => {
       if (document.getElementById('bg').classList.length === 0) {
         document.getElementById('bg').classList.add('trans')
         document.getElementById('transparency').classList.add('transText')
-
-        document.getElementById('logo').classList.add('hidden')
-        document.getElementById('logo-w').classList.remove('hidden')
-
-        document.getElementById('cfo').classList.add('hidden')
-        document.getElementById('cao').classList.remove('hidden')
-
-        document.getElementById('nav').classList.add('hidden')
-        document.getElementById('contact').classList.add('hidden')
       } else {
         document.getElementById('bg').classList.remove('trans')
         document.getElementById('transparency').classList.remove('transText')
-        document.getElementById('logo').classList.remove('hidden')
-        document.getElementById('logo-w').classList.add('hidden')
-
-        document.getElementById('cfo').classList.remove('hidden')
-        document.getElementById('cao').classList.add('hidden')
-
-        document.getElementById('nav').classList.remove('hidden')
-        document.getElementById('contact').classList.remove('hidden')
       }
     }
   }
@@ -90,47 +52,24 @@ export default {
 </script>
 
 <style scoped>
-  #logo {
-    height: 54px;
+  h1 {
+    font-size: 64px;
     margin: 12px 0px;
   }
 
-  #logo-w {
-    height: 54px;
-    margin: 12px 0px;
-    filter: invert(100%);
-    position: absolute;
+  h2 {
+    margin-bottom: 10vh;
   }
 
-  #overtrans {
-    margin-bottom: 0px;
-  }
-
-  #transparency {
-    /*border-bottom: 1px dotted;*/
-    -webkit-animation: pulse 5s infinite ease-in-out;
-    -o-animation: pulse 5s infinite ease-in-out;
-    -ms-animation: pulse 5s infinite ease-in-out;
-    -moz-animation: pulse 5s infinite ease-in-out;
-    animation: pulse 5s infinite ease-in-out;
-  }
   #transparency:hover {
-    cursor: pointer;
-    opacity: 0.5;
-  }
-
-  #cao {
     color: #FFFFFF;
-    position: absolute;
-  }
-
-  #cfo {
-    color: #000000;
-    visibility: hidden;
+    cursor: none;
+    opacity: 1;
   }
 
   .transText {
     color: #FFFFFF;
+    cursor: none;
     opacity: 1;
   }
 
@@ -145,7 +84,7 @@ export default {
   a {
     color: #000;
     text-decoration: none;
-    /*border-bottom: 2px dotted;*/
+    border-bottom: 2px dotted;
     font-weight: 600;
   }
 
@@ -155,27 +94,7 @@ export default {
 
   ul {
     list-style-type: none;
-    margin: 0px 0px 20px 0px;
+    margin: 0px 0px 20px 20px;
     padding: 0;
-  }
-
-  .hidden {
-    visibility: hidden;
-  }
-
-  .top {
-    margin-top: 25%;
-  }
-
-  @-webkit-keyframes pulse {
-    0% { opacity: 0.5; }
-    50% { opacity: 1; }
-    100% { opacity: 0.5; }
-  }
-
-  @keyframes pulse {
-    0% { opacity: 0.5; }
-    50% { opacity: 1; }
-    100% { opacity: 0.5; }
   }
 </style>

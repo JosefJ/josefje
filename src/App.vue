@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div id="bg" @click="transOut">
+    <div id="bg">
       <canvas id="bg-canvas" resize="true"></canvas>
     </div>
     <router-view/>
@@ -17,6 +17,8 @@ export default {
       var ctx = document.getElementById('bg-canvas')
       paper.setup(ctx)
 
+      // var xAxis = this.xAxis
+      // var yAxis = this.yAxis
       var xAxis = window.innerWidth
       var yAxis = window.innerHeight
 
@@ -27,7 +29,7 @@ export default {
           strokeWidth: 1
         })
       }
-      var wormLen = 23
+      var wormLen = 42
       var worms = [null, null, null]
       for (let w = 0; w < worms.length; w++) {
         worms[w] = new paper.Path({
@@ -114,18 +116,6 @@ export default {
         yAxis = window.innerHeight
       }
       paper.view.draw()
-    },
-    transOut: () => {
-      document.getElementById('bg').classList.remove('trans')
-      document.getElementById('transparency').classList.remove('transText')
-      document.getElementById('logo').classList.remove('hidden')
-      document.getElementById('logo-w').classList.add('hidden')
-
-      document.getElementById('cfo').classList.remove('hidden')
-      document.getElementById('cao').classList.add('hidden')
-
-      document.getElementById('nav').classList.remove('hidden')
-      document.getElementById('contact').classList.remove('hidden')
     }
   },
   mounted () {
@@ -135,14 +125,31 @@ export default {
 </script>
 
 <style lang="scss">
-  @import 'styles/normalize.css';
-  @import "styles/skeleton.css";
+  @import 'assets/css/normalize.css';
+  @import "assets/css/skeleton.css";
 
-  html, body {
-    font-family: Rift;
-    letter-spacing: 4px;
+  @font-face {
+    font-family: 'Roboto-Regular';
+    src: url('assets/font/Roboto-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Raleway-Regular';
+    src: url('assets/font/Raleway-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  html, body, p {
+    font-family: Raleway-Regular;
+    letter-spacing: 3px;
     color: #000000;
+  }
 
+  h1, h2, h3, h4 {
+    font-family: Roboto-Regular;
   }
 
   #bg {
@@ -156,30 +163,16 @@ export default {
 
   #bg-canvas {
     width: 100%;
-    height: 99.9%;
+    height: 99%;
   }
 
   .trans {
-    -webkit-animation: trans 1s ease-in-out;
-    -o-animation: trans 1.5s ease-in-out;
-    -ms-animation: trans 1.5s ease-in-out;
-    -moz-animation: trans 1.5s ease-in-out;
-    animation: trans 1.5s ease-in-out;
+    -webkit-animation: trans 2s ease-in-out;
+    -o-animation: trans 2s ease-in-out;
+    -ms-animation: trans 2s ease-in-out;
+    -moz-animation: trans 2s ease-in-out;
+    animation: trans 2s ease-in-out;
     animation-fill-mode: forwards;
-  }
-
-  @font-face {
-    font-family: 'Rift';
-    src: url('assets/font/Rift-Regular.otf');
-    font-weight: normal;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'RiftBold';
-    src: url('assets/font/RiftSoft-Bold.otf');
-    font-weight: bold;
-    font-style: normal;
   }
 
   @-webkit-keyframes trans {

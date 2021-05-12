@@ -7,13 +7,13 @@ const state = {
     item1: {
       logo: '',
       name: 'Privacy',
-      description: 'We are interested in tools that help to preserve digital privacy and also in researching ways confidential store can leak.',
+      description: 'We are interested in tools that help to preserve digital privacy and also in researching ways confidential data can leak.',
       link: ''
     },
     item2: {
       logo: '',
       name: 'Meaning',
-      description: '"It is just turtles all the way down!" No, this is not supposed to make any sense to a stranger.',
+      description: 'It\'s just turtles all the way down! No, this is not supposed to make any sense to a stranger.',
       link: ''
     },
     item3: {
