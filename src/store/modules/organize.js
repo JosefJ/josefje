@@ -24,9 +24,9 @@ const state = {
     },
     item4: {
       logo: '',
-      name: 'Hackers Congress Parallel Polis',
-      description: 'Cypherpunk conference organized by the Prague cryptoanarchist scene',
-      link: 'https://hcpp.cz'
+      name: 'ETHPrague',
+      description: 'Solarpunk hackathon by and for the Ethereum Community',
+      link: 'https://ethprague.com'
     }
   }
 }
