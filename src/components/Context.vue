@@ -6,7 +6,6 @@
       <div class="one-half culumn" style="margin-top: 25%">
         <div class="nav">
           <a href="/#/">
-            <img id="logo" src="../assets/backs.png">
             <span id="backNav"> BACK </span>
           </a>
         </div>
